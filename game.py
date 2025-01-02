@@ -10,6 +10,10 @@ def isWordValid(choice):
         choice = random.choice(words)
 
 
+def splitWord(word):
+    list = [c for c in word]
+    return list
+
 
 def game():
     numberTries = 6;
