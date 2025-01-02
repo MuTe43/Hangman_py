@@ -1,14 +1,11 @@
 import random
 
 with open("./words.txt") as wordfile:
-    words = wordfile.read().split()
+    words = wordfile.readlines()
+    #Removes the newline "\n" from the list AND makes sure the words are valid (no hyphen or spaces allowed)
+    words=[words.rsplit("\n")[0] for words in words if (("-" not in words)and(" " not in words))]
 
-
-
-def isWordValid(choice):
-    while ("-" in choice or " " in choice):
-        choice = random.choice(words)
-
+print(words)
 
 def splitWord(word):
     list = [c for c in word]
@@ -18,7 +15,8 @@ def splitWord(word):
 def game():
     numberTries = 6;
     choice = random.choice(words)
-    isWordValid(choice)
+    a=splitWord(choice)
+    print(a)
     for i in range(numberTries):
         user = input("Guess a letter: ")
         if (user == choice):
