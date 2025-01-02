@@ -22,7 +22,7 @@ def game():
         print(attempt)
         user = input("Guess a letter: ")
         # guessedLetter = [i if i in a and i in user else "_" for i in a ]
-        guessedLetter = [i if i in enumerate(a) and i in enumerate(user) else "_" for i in enumerate(user) ]
+        guessedLetter = [i if i in a and i in user else "_" for i in a ] # makes a list of guessed letters based on the input
         if (user == choice):
             print("you win")
             return
