@@ -18,10 +18,16 @@ def game():
     a=splitWord(choice)
     print(a)
     for i in range(numberTries):
+        attempt = "_    "*len(choice)
+        print(attempt)
         user = input("Guess a letter: ")
+        guessedLetter = [i for i in user if i in a]
         if (user == choice):
             print("you win")
             return
+        elif (len(guessedLetter)>=1):
+            print(f"you guessed some letters {guessedLetter}")
+
         else:
             print(f"wrong guess you have {numberTries - 1 - i} left ")
 game()
