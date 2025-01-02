@@ -21,7 +21,8 @@ def game():
         attempt = "_    "*len(choice)
         print(attempt)
         user = input("Guess a letter: ")
-        guessedLetter = [i for i in user if i in a]
+        # guessedLetter = [i if i in a and i in user else "_" for i in a ]
+        guessedLetter = [i if i in enumerate(a) and i in enumerate(user) else "_" for i in enumerate(user) ]
         if (user == choice):
             print("you win")
             return
